@@ -6,7 +6,11 @@ import (
 	"net/http"
 )
 
-// html templates escapes un-safe characters
+// html templates escapes un-safe characters avoid cross site scripting
+
+// `<script>alert('hi')</script>`
+//  in text templates, fn will be exceuted
+//  in html templates , additional characters will be added in b/w
 
 var tpl *template.Template
 
